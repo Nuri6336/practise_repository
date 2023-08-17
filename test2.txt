@@ -1,3 +1,9 @@
 hello conflict file
 jnujnjbhhjbjh
 hbjgjhjh
+hello conflict file
+jnujnjbhhjbjh
+hbjgjhjh
+hello conflict file
+jnujnjbhhjbjh
+hbjgjhjh
