@@ -29,3 +29,7 @@ FROM Products INNER JOIN Suppliers
 ON Products.SupplierID = Suppliers.SupplierID
 GROUP BY Suppliers.SupplierID
 ORDER BY TotalPrice DESC;
+
+vi.SELECT * FROM Customers
+WHERE Country='Germany'
+LIMIT 3;
