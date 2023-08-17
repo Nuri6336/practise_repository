@@ -1,0 +1,31 @@
+1. INNER JOIN
+i. SELECT COUNT(Orders.OrderID) AS TotalOrder, Customers.CustomerName
+FROM Orders
+INNER JOIN 
+Customers ON Orders.CustomerID = Customers.CustomerID 
+GROUP BY Customers.CustomerID;
+
+ii. SELECT COUNT(Orders.OrderID) AS TotalOrder, Customers.CustomerName
+FROM Orders
+LEFT JOIN 
+Customers ON Orders.CustomerID = Customers.CustomerID 
+GROUP BY Customers.CustomerID ORDER BY TotalOrder DESC LIMIT 1;
+
+iii.SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName,Employees.EmployeeID
+FROM (((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID)
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID);
+
+iv. SELECT COUNT(Orders.OrderID) AS TotalOrder, Customers.CustomerName, Customers.Country
+FROM Orders INNER JOIN Customers 
+ON Orders.CustomerID = Customers.CustomerID
+GROUP BY Customers.Country
+ORDER BY TotalOrder DESC;
+
+v.SELECT Suppliers.SupplierName, COUNT(Products.ProductID) AS TotalProducts, 
+SUM(Products.Price) AS TotalPrice, AVG(Products.Price) AS AveragePrice
+FROM Products INNER JOIN Suppliers
+ON Products.SupplierID = Suppliers.SupplierID
+GROUP BY Suppliers.SupplierID
+ORDER BY TotalPrice DESC;
